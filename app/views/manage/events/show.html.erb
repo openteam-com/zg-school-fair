@@ -1,0 +1,3 @@
+<p><%= @event.title %></p>
+<p><%= @event.when %></p>
+<%= link_to 'Удалить', manage_event_path(@event.id), method: 'DELETE', data: { confirm: 'Удалить?' } %>
