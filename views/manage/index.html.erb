@@ -1,0 +1,4 @@
+<%= link_to "Новое событие", '/manage/event/new' %>
+<% @events.each do |event| %>
+  <p><%= event.title %></p>
+<% end %>
