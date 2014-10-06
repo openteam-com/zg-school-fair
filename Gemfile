@@ -1,16 +1,23 @@
 source 'https://rubygems.org'
 
-group :assets do
+group :default do
+  gem 'jbuilder', '~> 2.0'
+  gem 'pg'
+  gem 'rails', '4.1.5'
+  gem 'simple_form'
+  gem 'turbolinks'
 end
 
-group :default do
-  gem 'sinatra'
-  gem 'sinatra-activerecord'
-  gem 'rake'
-  gem 'pg'
+group :assets do
+  gem 'coffee-rails', '~> 4.0.0'
+  gem 'compass-rails'
+  gem 'jquery-rails'
+  gem 'sass-rails', '~> 4.0.3'
+  gem 'uglifier', '>= 1.3.0'
 end
+
 
 group :development do
-  gem 'shotgun'
-  gem 'tux'
+  gem 'hirb'
+  gem 'spring'
 end

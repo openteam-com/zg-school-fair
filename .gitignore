@@ -1,2 +1,5 @@
+/.bundle
+/log/*.log
+/tmp
 /config/database.yml
-
+/config/secrets.yml

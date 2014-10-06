@@ -1,5 +1,17 @@
+default: &default
+  adapter: postgresql
+  host: localhost
+  pool: 5
+  timeout: 5000
+
 development:
-  adapter:
-  database:
-  host:
-  username:
+  <<: *default
+  database: talant
+
+test:
+  <<: *default
+  database: db/test.sqlite3
+
+production:
+  <<: *default
+  database: db/production.sqlite3
