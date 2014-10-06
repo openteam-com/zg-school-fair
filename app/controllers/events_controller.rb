@@ -1,5 +1,3 @@
 class EventsController < ApplicationController
-  def index
-
-  end
+  inherit_resources
 end
