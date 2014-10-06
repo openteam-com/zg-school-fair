@@ -1,0 +1,6 @@
+app:
+  secret:
+
+redis:
+  host:
+  port: 6379
