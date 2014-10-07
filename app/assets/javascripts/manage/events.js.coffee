@@ -18,6 +18,10 @@ $ ->
       <input name="event[related_title][]" type="hidden" value="' + url.text() + '" class="hidden_titles">
       </div>')
 
+  $('#type_select').change ->
+    $('.posters').empty()
+    perform_ajax()
+
 get_related_ids = ->
   related_ids = []
   $('.hidden_ids').each ->
@@ -25,10 +29,13 @@ get_related_ids = ->
     related_ids.push arr[1]
   related_ids
 
+get_ajax_url = ->
+  $('#type_select option:selected').val() || 'http://znaigorod.ru/api/afisha_collection'
+
 perform_ajax = ->
   $.ajax
     type: 'get'
-    url: 'http://znaigorod.ru/api/afisha_collection'
+    url: get_ajax_url()
     crossDomain: true
     dataType: 'JSONP'
     data:
@@ -36,9 +43,9 @@ perform_ajax = ->
     success: (response) ->
       $.each response, (k, v) ->
         if $.inArray(k,get_related_ids()) isnt -1
-          button = "<div><button class='js-add-relation' type='button' remote='true' id='afisha_#{k}' disabled>Добавлено</button></div>"
+          button = "<div><button class='js-add-relation' type='button' remote='true' id='#{v.prefix}_#{k}' disabled>Добавлено</button></div>"
         else
-          button = "<div><button class='js-add-relation' type='button' remote='true' id='afisha_#{k}'>Добавить</button></div>"
+          button = "<div><button class='js-add-relation' type='button' remote='true' id='#{v.prefix}_#{k}'>Добавить</button></div>"
 
         $('.posters').append("
         <li class='poster'>

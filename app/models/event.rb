@@ -13,7 +13,7 @@ class Event < ActiveRecord::Base
       r_id, r_link, r_title = item
       prefix, id = r_id.split('_')
       related_items.create(item_type: prefix, item_id: id)
-      $redis.set id, {"link" => r_link, "title" => r_title}.to_json
+      $redis.set r_id, {"link" => r_link, "title" => r_title}.to_json
     end
   end
 end

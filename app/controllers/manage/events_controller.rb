@@ -20,7 +20,7 @@ class Manage::EventsController < Manage::ApplicationController
     @event = Event.find(params[:id])
     @related_items = {}.tap{ |hash|
       @event.related_items.each do |item|
-        hash[item.item_id] = JSON.parse($redis.get item.item_id)
+        hash["#{item.item_type}_#{item.item_id}"] = JSON.parse($redis.get "#{item.item_type}_#{item.item_id}")
       end
     }
   end

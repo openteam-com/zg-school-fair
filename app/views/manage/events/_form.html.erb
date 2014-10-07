@@ -9,14 +9,20 @@
         <% @related_items.each do |key, value| %>
           <div class="element">
             <%= link_to value["title"], value["link"] %>
-            <%= hidden_field_tag "event[related][]", "afisha_#{key}", class: "hidden_ids" %>
+            <%= hidden_field_tag "event[related][]", key, class: "hidden_ids" %>
             <%= hidden_field_tag "event[related_link][]", value["link"], class: "hidden_links" %>
             <%= hidden_field_tag "event[related_title][]", value["title"], class: "hidden_titles" %>
           </div>
         <% end %>
       <% end %>
     </div>
-    <%= text_field_tag :search, '', placeholder: 'Поиск'  %>
+
+    <div class='select_and_search'>
+       <%= select_tag 'type_select', options_for_select([ ['Афиша', 'http://znaigorod.ru/api/afisha_collection'], ['Обзоры', 'http://znaigorod.ru/api/review_collection'] ]) %>
+       <%= button_tag '', type: 'button', remote: true, class: 'sbm' %>
+       <%= text_field_tag :search, '', placeholder: 'Поиск'  %>
+     </div>
+
     <ul class='posters'></ul>
   </div>
 <% end %>
