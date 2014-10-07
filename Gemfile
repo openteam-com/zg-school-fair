@@ -10,6 +10,7 @@ group :default do
   gem 'pg'
   gem 'rails', '~> 4.1.5'
   gem 'redis-rails'
+  gem 'roadie', '~> 2.4'
   gem 'russian'
   gem 'sass-rails', '~> 4.0.3'
   gem 'simple_form'
@@ -20,4 +21,5 @@ end
 group :development do
   gem 'hirb'
   gem 'spring'
+  gem "letter_opener"
 end
