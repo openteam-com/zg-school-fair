@@ -2,4 +2,10 @@
   <%= f.input :title  %>
   <%= f.input :when %>
   <%= f.submit 'Создать' %>
+
+  <div class="related_items_wrapper">
+    <div class="sticky_elements"></div>
+    <%= text_field_tag :search, '', placeholder: 'Поиск'  %>
+    <ul class='posters'></ul>
+  </div>
 <% end %>
