@@ -4,7 +4,18 @@
   <%= f.submit 'Создать' %>
 
   <div class="related_items_wrapper">
-    <div class="sticky_elements"></div>
+    <div class="sticky_elements">
+      <% if @related_items %>
+        <% @related_items.each do |key, value| %>
+          <div class="element">
+            <%= link_to value["title"], value["link"] %>
+            <%= hidden_field_tag "event[related][]", "afisha_#{key}", class: "hidden_ids" %>
+            <%= hidden_field_tag "event[related_link][]", value["link"], class: "hidden_links" %>
+            <%= hidden_field_tag "event[related_title][]", value["title"], class: "hidden_titles" %>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
     <%= text_field_tag :search, '', placeholder: 'Поиск'  %>
     <ul class='posters'></ul>
   </div>

@@ -1,4 +1,7 @@
 <%= link_to 'Новое событие', new_manage_event_path %>
 <% @events.each do |event| %>
-  <p><%= link_to event.title, manage_event_path(event.id) %></p>
+  <p>
+    <%= link_to event.title, manage_event_path(event.id) %>
+    <%= link_to "Редакитировать", edit_manage_event_path(event.id) %>
+  </p>
 <% end %>

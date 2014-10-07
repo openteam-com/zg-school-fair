@@ -16,6 +16,24 @@ class Manage::EventsController < Manage::ApplicationController
     end
   end
 
+  def edit
+    @event = Event.find(params[:id])
+    @related_items = {}.tap{ |hash|
+      @event.related_items.each do |item|
+        hash[item.item_id] = JSON.parse($redis.get item.item_id)
+      end
+    }
+  end
+
+  def update
+    @event = Event.find(params[:id])
+    if @event.update_attributes(event_params)
+      redirect_to manage_events_path
+    else
+      render :edit
+    end
+  end
+
   def show
     @event = Event.find(params[:id])
   end
@@ -27,6 +45,6 @@ class Manage::EventsController < Manage::ApplicationController
 
   private
   def event_params
-    params.require(:event).permit(:title, :when)
+    params.require(:event).permit(:title, :when, :related_link => [], :related_title => [], :related => [])
   end
 end
