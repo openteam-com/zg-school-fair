@@ -14,6 +14,9 @@ class ParticipantsController < ApplicationController
   private
 
   def participant_params
-    params.require(:participant).permit(:first_name, :last_name, :address, :accept_terms)
+    params.require(:participant).permit(:performance_name, :nomination, :auditory, :age, :address_index,
+                                        :address_area, :address_district, :address_city, :address_street,
+                                        :address_building, :address_housing, :address_flat,:phone, :email,
+                                        :performance_name, :music, :accept_terms)
   end
 end
