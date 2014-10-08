@@ -1,3 +1,111 @@
 body
+  font-family: 'Verdana'
   a
+    color: #67c2ea
     text-decoration: none
+
+.outside_wrapper
+  background: transparent url('background.jpg') no-repeat center top
+
+  .sponsors, .navigation
+    height: 68px
+    width: 910px
+    margin: 0 auto
+
+  .navigation
+    height: 26px
+
+  .sponsors
+    .duma_sponsor, .edro_sponsor, .csi_sponsor, .alliance_sponsor, .zg_sponsor
+      height: 68px
+      float: right
+      margin-right: 5px
+
+    .duma_sponsor
+      background: transparent url('duma.png') no-repeat center top
+      width: 89px
+
+    .edro_sponsor
+      background: transparent url('edro.png') no-repeat center top
+      width: 48px
+
+    .csi_sponsor
+      background: transparent url('csi.png') no-repeat center top
+      width: 118px
+
+    .alliance_sponsor
+      background: transparent url('alliance.png') no-repeat center top
+      width: 95px
+
+    .zg_sponsor
+      background: transparent url('zg.png') no-repeat center top
+      width: 119px
+      margin-right: 0
+
+  .navigation
+    .links_wrapper
+      margin-top: 20px
+
+      span
+        display: table-cell
+        float: right
+        margin-right: 10px
+        vertical-align: middle
+
+        a
+          +border-radius(5px)
+          background-color: transparent
+          font-size: 14px
+          height: 26px
+          padding: 4px 15px
+          text-align: center
+          color: #4f4d8a
+
+          &:first-child
+            margin-right: 0
+
+          &:hover
+            background-color: #3f3a7b
+            color: white
+
+  .content_wrapper
+    clear: both
+    margin: 0 auto
+    padding: 20px
+    +box-sizing(border-box)
+    width: 870px
+    min-height: 200px
+    background-color: rgba(#101326, .85)
+    +border-radius(10px)
+
+    .content
+      p
+        margin: 10px 0 10px 0
+      ul
+        clear: both
+        list-style: disc
+        margin-left: 15px
+
+        li
+          color: #f9b421
+          font-size: 16px
+
+          span
+            color: white
+            font-size: 12px
+            line-height: 18px !important
+
+h1
+  font-size: 14px
+  font-weight: bold
+  color: #f9b421
+
+.highlight
+  color: #f9b421 !important
+
+.divider
+  background-color: #343b65
+  height: 2px
+  margin: 10px 0 10px -20px
+  padding-right: 40px
+  width: 100%

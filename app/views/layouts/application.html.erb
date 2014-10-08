@@ -7,8 +7,28 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <div class="outside_wrapper"> <!-- background -->
+    <div class="sponsors">
+      <div class="zg_sponsor"></div>
+      <div class="alliance_sponsor"></div>
+      <div class="csi_sponsor"></div>
+      <div class="edro_sponsor"></div>
+      <div class="duma_sponsor"></div>
+    </div>
+    <div class="navigation">
+      <div class="links_wrapper">
+        <span><%= link_to 'ЗАЯВКА', send_request_path %></span>
+        <span> <%= link_to 'УСЛОВИЯ УЧАСТИЯ', show_conditions_path %></span>
+        <span> <%= link_to 'О КОНКУРСЕ', about_path %></span>
+      </div>
+    </div>
+    <div class="content_wrapper">
+      <div class="content">
 
-<%= yield %>
+        <%= yield %>
 
+      </div>
+    </div>
+  </div>
 </body>
 </html>
