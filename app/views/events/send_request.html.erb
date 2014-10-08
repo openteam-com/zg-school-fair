@@ -1,0 +1,49 @@
+<div class="send_request">
+  <h1>Анкета-заявка на участие в открытом конкурсе</h1>
+  <div class='left'>
+    <div class='title'>
+      <span class='orange_star'>*</span> Исполнитель
+    </div>
+    <div class='title'>
+      <span class='orange_star'>*</span> Номинации
+    </div>
+    <div class='title'>
+      Целевая аудитория
+    </div>
+    <div class='title'>
+      <span class='orange_star'>*</span> Возраст
+    </div>
+    <div class='title'>
+      Адрес
+    </div>
+    <div class='title'>
+      <span class='orange_star'>*</span> Контактный телефон
+    </div>
+    <div class='title'>
+      <span class='orange_star'>*</span> E-mail
+    </div>
+    <div class='title'>
+      <span class='orange_star'>*</span> Название произведения
+    </div>
+    <div class="title">
+      <span class='orange_star'>*</span> Виде музыкального сопровождения
+    </div>
+  </div>
+  <div class="right">
+    <%= simple_form_for @participant do |f| %>
+      <%= f.input :performer, input_html: { size: 50, placeholder: 'Ф.И.О или название коллектива' }, label: false %>
+      <%= f.input :nomination, as: :check_boxes, label: false %>
+      <%= f.input :auditory, as: :check_boxes, label: false %>
+      <%= f.input :age, input_html: { size: 80, placeholder: 'На момент подачи заявки' }, label: false %>
+      <%= f.input :address, input_html: { size: 50  }, label: false %>
+      <%= f.input :phone, input_html: { size: 50 }, label: false %>
+      <%= f.input :email, input_html: { size: 50 }, label: false  %>
+      <%= f.input :performance_name, input_html: { size: 50,  }, label: false %>
+      <%= f.input :music, input_html: { size: 50, placeholder: 'Указать хронометраж в минутах' }, label: false %>
+      <%= f.input :accept_terms, label: 'Я согласен на обработку персональных данных' %>
+    </div>
+    <div style='clear: both'></div>
+    <div class="divider"></div>
+    <%= f.submit 'Отправить заявку', class: 'btn' %>
+  <% end %>
+</div>

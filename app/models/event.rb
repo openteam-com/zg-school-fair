@@ -17,3 +17,14 @@ class Event < ActiveRecord::Base
     end
   end
 end
+
+# == Schema Information
+#
+# Table name: events
+#
+#  id         :integer          not null, primary key
+#  title      :string(255)
+#  when       :date
+#  created_at :datetime
+#  updated_at :datetime
+#

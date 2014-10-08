@@ -4,6 +4,7 @@ group :default do
   gem 'coffee-rails', '~> 4.0.0'
   gem 'compass-rails'
   gem 'configliere'
+  gem 'enumerize'
   gem 'inherited_resources'
   gem 'jbuilder', '~> 2.0'
   gem 'jquery-rails'
@@ -19,7 +20,8 @@ group :default do
 end
 
 group :development do
+  gem "letter_opener"
+  gem 'annotate'
   gem 'hirb'
   gem 'spring'
-  gem "letter_opener"
 end

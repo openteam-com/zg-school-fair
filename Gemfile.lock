@@ -28,6 +28,9 @@ GEM
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
     addressable (2.3.6)
+    annotate (2.6.5)
+      activerecord (>= 2.3.0)
+      rake (>= 0.8.7)
     arel (5.0.1.20140414130214)
     builder (3.2.2)
     chunky_png (1.3.1)
@@ -49,6 +52,8 @@ GEM
       multi_json (>= 1.1)
     css_parser (1.3.5)
       addressable
+    enumerize (0.8.0)
+      activesupport (>= 3.2)
     erubis (2.7.0)
     execjs (2.2.1)
     fssm (0.2.10)
@@ -161,9 +166,11 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  annotate
   coffee-rails (~> 4.0.0)
   compass-rails
   configliere
+  enumerize
   hirb
   inherited_resources
   jbuilder (~> 2.0)

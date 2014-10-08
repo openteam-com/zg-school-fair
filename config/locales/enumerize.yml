@@ -1,7 +1,7 @@
 ru:
-  nomination:
-  auditory:
-    schoolboys: школьники
-    young_workers: рабочая молодежь
-    students: стусденты
-    older_people: люди старшего поколения
+  enumerize:
+    auditory:
+      schoolboys: школьники
+      young_workers: рабочая молодежь
+      students: студенты
+      older_people: люди старшего поколения

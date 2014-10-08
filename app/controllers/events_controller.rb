@@ -1,6 +1,5 @@
 class EventsController < ApplicationController
   def index
-    @participant = Participant.new
   end
 
   def send_event
@@ -14,5 +13,6 @@ class EventsController < ApplicationController
   end
 
   def send_request
+    @participant = Participant.new
   end
 end
