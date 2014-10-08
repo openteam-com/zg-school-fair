@@ -17,9 +17,9 @@
     </div>
     <div class="navigation">
       <div class="links_wrapper">
-        <span><%= link_to 'ЗАЯВКА', send_request_path %></span>
-        <span> <%= link_to 'УСЛОВИЯ УЧАСТИЯ', show_conditions_path %></span>
-        <span> <%= link_to 'О КОНКУРСЕ', about_path %></span>
+        <span class="<%= 'selected' if action_name == 'send_request' %>"><%= link_to 'ЗАЯВКА', send_request_path  %></span>
+        <span class="<%= 'selected' if action_name == 'show_conditions' %>"> <%= link_to 'УСЛОВИЯ УЧАСТИЯ', show_conditions_path %></span>
+        <span class="<%= 'selected' if action_name == 'about' %>"> <%= link_to 'О КОНКУРСЕ', about_path %></span>
       </div>
     </div>
     <div class="content_wrapper">
