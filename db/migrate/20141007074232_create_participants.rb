@@ -5,14 +5,7 @@ class CreateParticipants < ActiveRecord::Migration
       t.string :nomination
       t.string :auditory
       t.integer :age
-      t.string :address_index
-      t.string :address_area
-      t.string :address_district
-      t.string :address_city
-      t.string :address_street
-      t.string :address_building
-      t.string :address_housing
-      t.string :address_flat
+      t.string :address
       t.string :phone
       t.string :email
       t.string :performance_name
