@@ -5,7 +5,7 @@ class Participant < ActiveRecord::Base
   validates_presence_of :performer, :nomination, :age, :phone, :email, :performance_name, :music
 
   enumerize :nomination,
-    in: [:a,:b,:c,:d,:e],
+    in: [:vokal, :choreography,:poem, :minute_of_fame, :art],
     multiple: true
 
   enumerize :auditory,
