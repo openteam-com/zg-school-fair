@@ -4,10 +4,12 @@ class Participant < ActiveRecord::Base
 
   validates_presence_of :performer, :nomination, :age, :phone, :email, :performance_name, :music
 
+  serialize :nomination, Array
   enumerize :nomination,
     in: [:vokal, :choreography,:poem, :minute_of_fame, :art],
     multiple: true
 
+  serialize :auditory, Array
   enumerize :auditory,
     in: [:schoolboys, :young_workers, :students, :older_people],
     multiple: true

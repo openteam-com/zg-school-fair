@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   namespace :manage do
-    root to: 'events#index'
     resources :events
   end
 
@@ -14,5 +13,5 @@ Rails.application.routes.draw do
 
   resources :participants, only: [:new, :create]
 
-  root to: 'events#index'
+  root to: 'events#about'
 end

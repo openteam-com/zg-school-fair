@@ -1,5 +1,12 @@
 ru:
   enumerize:
+    nomination:
+      vokal: Вокал
+      choreography: Хореография
+      poem: Художественное слово
+      minute_of_fame: Минута славы
+      art: Декоративно-прикладное искусство
+
     auditory:
       schoolboys: школьники
       young_workers: рабочая молодежь
