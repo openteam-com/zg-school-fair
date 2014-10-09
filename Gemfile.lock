@@ -241,6 +241,7 @@ DEPENDENCIES
   roadie (~> 2.4)
   russian
   sass-rails (~> 4.0.3)
+  sidekiq
   simple_captcha2
   simple_form
   spring

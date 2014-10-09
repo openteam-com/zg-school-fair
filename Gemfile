@@ -15,6 +15,7 @@ group :default do
   gem 'roadie', '~> 2.4'
   gem 'russian'
   gem 'sass-rails', '~> 4.0.3'
+  gem 'sidekiq'
   gem 'simple_captcha2', require: 'simple_captcha'
   gem 'simple_form'
   gem 'uglifier', '>= 1.3.0'

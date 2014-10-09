@@ -22,5 +22,9 @@ module Talant
     config.autoload_paths += %W(
                                 #{config.root}/lib
                                )
+
+    config.action_mailer.default_url_options = { host: Settings['app.host'], port: Settings['app.port']  }
+    config.action_mailer.delivery_method = :smtp
+    config.action_mailer.smtp_settings = Settings['smtp']
   end
 end
