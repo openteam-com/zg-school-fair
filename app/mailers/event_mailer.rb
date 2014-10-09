@@ -1,8 +1,8 @@
 class EventMailer < ActionMailer::Base
-  default from: "from@example.com"
+  default from: Settings['mail.from']
 
   def event_mail(participant)
     @participant = participant
-    mail(to: 'test@test.com', subject: 'Заявка на участие в конкурсе')
+    mail(to: Settings['mail.to'], subject: 'Заявка на участие в конкурсе')
   end
 end
