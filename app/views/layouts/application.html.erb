@@ -2,15 +2,24 @@
 <html>
   <head>
     <title>Томские таланты</title>
-    <meta name='keywords' content='конкурс, Томские таланты, Томск, вокал, хореография, художественное слово, минута славы, декоративно - прикладное искусство'/>
-    <meta name='description' content='Открытый конкурс «Томские таланты» — открытая арт-арена, творческая площадка, конкурс талантов, посвященный празднованию 410-летия г. Томска, проходящего в рамках Года культуры в России.'/>
-    <meta name='title' content='Томские таланты'/>
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
     <%= csrf_meta_tags %>
+    <meta name='keywords' content='конкурс, Томские таланты, Томск, вокал, хореография, художественное слово, минута славы, декоративно - прикладное искусство'/>
+    <meta name='description' content='Открытый конкурс «Томские таланты» — открытая арт-арена, творческая площадка, конкурс талантов, посвященный празднованию 410-летия г. Томска, проходящего в рамках Года культуры в России.'/>
+    <meta name='title' content='Томские таланты'/>
   </head>
   <body>
     <div class="outside_wrapper"> <!-- background -->
+      <% if flash[:notice]  %>
+        <div class="notify_wrapper" align='center'>
+          <div class="notify">
+            <div class="notify_text">
+              <%= flash[:notice] %>
+            </div>
+          </div>
+        </div>
+      <% end %>
       <div class="sponsors">
         <div class="zg_sponsor"></div>
         <div class="alliance_sponsor"></div>
@@ -24,20 +33,14 @@
           <span class="<%= 'selected' if action_name == 'show_conditions' %>"> <%= link_to 'УСЛОВИЯ УЧАСТИЯ', show_conditions_path %></span>
           <span class="<%= 'selected' if action_name == 'about' %>"> <%= link_to 'О КОНКУРСЕ', about_path %></span>
         </div>
-        <div class="navigation">
-          <div class="links_wrapper">
-            <span class="<%= 'selected' if action_name == 'send_request' %>"><%= link_to 'ЗАЯВКА', new_participant_path  %></span>
-            <span class="<%= 'selected' if action_name == 'show_conditions' %>"> <%= link_to 'УСЛОВИЯ УЧАСТИЯ', show_conditions_path %></span>
-            <span class="<%= 'selected' if action_name == 'about' %>"> <%= link_to 'О КОНКУРСЕ', about_path %></span>
-          </div>
-        </div>
-        <div class="content_wrapper">
-          <div class="content">
+      </div>
+      <div class="content_wrapper">
+        <div class="content">
 
-            <%= yield %>
+          <%= yield %>
 
-          </div>
         </div>
       </div>
-    </body>
-  </html>
+    </div>
+  </body>
+</html>
