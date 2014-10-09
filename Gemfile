@@ -17,9 +17,6 @@ group :default do
   gem 'simple_form'
   gem 'uglifier', '>= 1.3.0'
   gem 'simple_captcha2', require: 'simple_captcha'
-end
-
-group :production do
   gem 'unicorn'
 end
 
