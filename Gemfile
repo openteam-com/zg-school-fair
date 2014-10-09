@@ -23,5 +23,6 @@ group :development do
   gem "letter_opener"
   gem 'annotate'
   gem 'hirb'
+  gem 'openteam-capistrano', '~> 1.0.7'
   gem 'spring'
 end
