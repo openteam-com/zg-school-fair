@@ -1,0 +1,24 @@
+<p>
+  Поступила новая заявка от  <%= @participant.performer  %>
+</p>
+<p>
+  В номинациях <%= @participant.nomination.map(&:text) %>
+</p>
+<p>
+  Для аудитории <%= @participant.auditory.map(&:text) %>
+</p>
+<p>
+  Возраст <%= @participant.age %>
+</p>
+<p>
+  Адрес <%= @participant.address %>
+</p>
+<p>
+  Телефон <%= @participant.phone %>
+</p>
+<p>
+  E-mail <%= @participant.email %>
+</p>
+<p>
+  Произведение <%= @participant.performance_name %> длительностью <%= @participant.music %>
+</p>

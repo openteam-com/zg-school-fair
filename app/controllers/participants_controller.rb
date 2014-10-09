@@ -10,6 +10,7 @@ class ParticipantsController < ApplicationController
     if simple_captcha_valid?
       if @participant.save
         flash[:notice] = "Ваша заявка принята"
+        EventMailer.event_mail(@participant).deliver
         redirect_to about_path
       else
         render :new
