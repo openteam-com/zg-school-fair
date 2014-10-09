@@ -19,6 +19,10 @@ group :default do
   gem 'simple_captcha2', require: 'simple_captcha'
 end
 
+group :production do
+  gem 'unicorn'
+end
+
 group :development do
   gem "letter_opener"
   gem 'annotate'
