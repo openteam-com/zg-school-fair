@@ -15,8 +15,8 @@ group :default do
   gem 'russian'
   gem 'sass-rails', '~> 4.0.3'
   gem 'simple_form'
-  gem 'turbolinks'
   gem 'uglifier', '>= 1.3.0'
+  gem 'simple_captcha2', require: 'simple_captcha'
 end
 
 group :development do

@@ -1,13 +1,20 @@
 class ParticipantsController < ApplicationController
+  include SimpleCaptcha::ControllerHelpers
+
   def new
+    @participant = Participant.new
   end
 
   def create
     @participant = Participant.new(participant_params)
-    if @participant.save
-      redirect_to about_path
+    if simple_captcha_valid?
+      if @participant.save
+        redirect_to about_path
+      else
+        render :new
+      end
     else
-      redirect_to send_request_path
+      render :new
     end
   end
 

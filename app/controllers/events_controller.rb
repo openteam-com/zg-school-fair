@@ -12,7 +12,4 @@ class EventsController < ApplicationController
   def show_conditions
   end
 
-  def send_request
-    @participant = Participant.new
-  end
 end

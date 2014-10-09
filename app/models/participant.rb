@@ -2,6 +2,8 @@ class Participant < ActiveRecord::Base
   extend Enumerize
   attr_accessor :accept_terms
 
+  after_validation :check_terms_accepted
+
   validates_presence_of :performer, :nomination, :age, :phone, :email, :performance_name, :music
 
   serialize :nomination, Array
@@ -13,6 +15,11 @@ class Participant < ActiveRecord::Base
   enumerize :auditory,
     in: [:schoolboys, :young_workers, :students, :older_people],
     multiple: true
+
+  def check_terms_accepted
+    errors[:accept_terms] << 'Необходимо принять пользовательское соглашение' unless accept_terms == '1'
+    true
+  end
 end
 
 # == Schema Information

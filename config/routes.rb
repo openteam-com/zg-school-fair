@@ -7,11 +7,10 @@ Rails.application.routes.draw do
     post 'send_event', as: :send,        on: :collection
   end
 
-  get 'about',       as: :about, to: 'events#about'
-  get 'show_conditions',  as: :show_conditions, to: 'events#show_conditions'
-  get 'send_request',     as: :send_request, to: 'events#send_request'
+  get 'about',            as: :about, to: 'static_pages#about'
+  get 'show_conditions',  as: :show_conditions, to: 'static_pages#show_conditions'
 
   resources :participants, only: [:new, :create]
 
-  root to: 'events#about'
+  root to: 'static_pages#about'
 end

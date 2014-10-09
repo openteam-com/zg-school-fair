@@ -2,8 +2,8 @@
 <html>
 <head>
   <title>Talant</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -17,7 +17,7 @@
     </div>
     <div class="navigation">
       <div class="links_wrapper">
-        <span class="<%= 'selected' if action_name == 'send_request' %>"><%= link_to 'ЗАЯВКА', send_request_path  %></span>
+        <span class="<%= 'selected' if action_name == 'send_request' %>"><%= link_to 'ЗАЯВКА', new_participant_path  %></span>
         <span class="<%= 'selected' if action_name == 'show_conditions' %>"> <%= link_to 'УСЛОВИЯ УЧАСТИЯ', show_conditions_path %></span>
         <span class="<%= 'selected' if action_name == 'about' %>"> <%= link_to 'О КОНКУРСЕ', about_path %></span>
       </div>
