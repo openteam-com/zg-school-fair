@@ -10,40 +10,69 @@ body
 .outside_wrapper
   background: transparent image-url('background.jpg') no-repeat center top
 
+  .self_link
+    display: block
+    height: 115px
+    left: 0
+    position: absolute
+    text-indent: -9999px
+    top: 0
+    width: 500px
+
   .sponsors, .navigation
     height: 68px
-    width: 885px
     margin: 0 auto
+    width: 885px
 
   .navigation
     height: 35px
 
   .sponsors
     .duma_sponsor, .edro_sponsor, .csi_sponsor, .alliance_sponsor, .zg_sponsor
-      height: 68px
       float: right
+      height: 68px
       margin-right: 5px
+
+      a
+        display: block
+        height: 68px
+        text-indent: -999999px
 
     .duma_sponsor
       background: transparent image-url('duma.png') no-repeat center top
       width: 89px
 
+      a
+        width: 89px
+
     .edro_sponsor
       background: transparent image-url('edro.png') no-repeat center top
       width: 48px
+
+      a
+        width: 48px
 
     .csi_sponsor
       background: transparent image-url('csi.png') no-repeat center top
       width: 118px
 
+      a
+        width: 118px
+
     .alliance_sponsor
       background: transparent image-url('alliance.png') no-repeat center top
       width: 95px
+
+      a
+        width: 95px
 
     .zg_sponsor
       background: transparent image-url('zg.png') no-repeat center top
       width: 119px
       margin-right: 0
+
+      a
+        width: 119px
 
   .navigation
     .links_wrapper
