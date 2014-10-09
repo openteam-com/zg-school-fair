@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(version: 20141008165001) do
     t.string   "phone"
     t.string   "email"
     t.string   "performance_name"
-    t.string   "music"
+    t.integer  "music"
     t.boolean  "accept_terms"
     t.datetime "created_at"
     t.datetime "updated_at"

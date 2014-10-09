@@ -9,7 +9,7 @@ class CreateParticipants < ActiveRecord::Migration
       t.string :phone
       t.string :email
       t.string :performance_name
-      t.string :music
+      t.integer :music
       t.boolean :accept_terms
       t.timestamps
     end
