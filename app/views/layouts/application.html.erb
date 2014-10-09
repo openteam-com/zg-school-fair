@@ -1,34 +1,43 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Talant</title>
-  <%= stylesheet_link_tag    'application', media: 'all' %>
-  <%= javascript_include_tag 'application' %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-  <div class="outside_wrapper"> <!-- background -->
-    <div class="sponsors">
-      <div class="zg_sponsor"></div>
-      <div class="alliance_sponsor"></div>
-      <div class="csi_sponsor"></div>
-      <div class="edro_sponsor"></div>
-      <div class="duma_sponsor"></div>
-    </div>
-    <div class="navigation">
-      <div class="links_wrapper">
-        <span class="<%= 'selected' if action_name == 'send_request' %>"><%= link_to 'ЗАЯВКА', new_participant_path  %></span>
-        <span class="<%= 'selected' if action_name == 'show_conditions' %>"> <%= link_to 'УСЛОВИЯ УЧАСТИЯ', show_conditions_path %></span>
-        <span class="<%= 'selected' if action_name == 'about' %>"> <%= link_to 'О КОНКУРСЕ', about_path %></span>
+  <head>
+    <title>Talant</title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <div class="outside_wrapper"> <!-- background -->
+      <% if flash[:notice]  %>
+        <div class="notify_wrapper" align='center'>
+          <div class="notify">
+            <div class="notify_text">
+              <%= flash[:notice] %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+      <div class="sponsors">
+        <div class="zg_sponsor"></div>
+        <div class="alliance_sponsor"></div>
+        <div class="csi_sponsor"></div>
+        <div class="edro_sponsor"></div>
+        <div class="duma_sponsor"></div>
+      </div>
+      <div class="navigation">
+        <div class="links_wrapper">
+          <span class="<%= 'selected' if action_name == 'send_request' %>"><%= link_to 'ЗАЯВКА', new_participant_path  %></span>
+          <span class="<%= 'selected' if action_name == 'show_conditions' %>"> <%= link_to 'УСЛОВИЯ УЧАСТИЯ', show_conditions_path %></span>
+          <span class="<%= 'selected' if action_name == 'about' %>"> <%= link_to 'О КОНКУРСЕ', about_path %></span>
+        </div>
+      </div>
+      <div class="content_wrapper">
+        <div class="content">
+
+          <%= yield %>
+
+        </div>
       </div>
     </div>
-    <div class="content_wrapper">
-      <div class="content">
-
-        <%= yield %>
-
-      </div>
-    </div>
-  </div>
-</body>
+  </body>
 </html>
