@@ -5,3 +5,4 @@
 /config/secrets.yml
 /test
 /config/settings.yml
+/config/deploy.yml
