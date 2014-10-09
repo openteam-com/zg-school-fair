@@ -9,6 +9,7 @@ class ParticipantsController < ApplicationController
     @participant = Participant.new(participant_params)
     if simple_captcha_valid?
       if @participant.save
+        flash[:notice] = "Ваша заявка принята!!!"
         redirect_to about_path
       else
         render :new
