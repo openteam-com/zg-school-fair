@@ -5,9 +5,11 @@
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
     <%= csrf_meta_tags %>
+    <%= favicon_link_tag 'favicon.ico' %>
     <meta name='keywords' content='конкурс, Томские таланты, Томск, вокал, хореография, художественное слово, минута славы, декоративно - прикладное искусство'/>
     <meta name='description' content='Открытый конкурс «Томские таланты» — открытая арт-арена, творческая площадка, конкурс талантов, посвященный празднованию 410-летия г. Томска, проходящего в рамках Года культуры в России.'/>
     <meta name='title' content='Томские таланты'/>
+    <meta property="og:image" content="http://storage.znaigorod.ru/files/176399/260-126/og_image.jpg">
   </head>
   <body>
     <div class="outside_wrapper"> <!-- background -->
@@ -58,6 +60,7 @@
         </div>
       </div>
     </div>
+    <%= render partial: 'commons/footer' %>
     <% if Rails.env.production? %>
       <%= render partial: 'commons/metrika' %>
     <% end %>
