@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 group :default do
+  gem 'airbrake'
   gem 'coffee-rails', '~> 4.0.0'
   gem 'compass-rails'
   gem 'configliere'
@@ -14,9 +15,9 @@ group :default do
   gem 'roadie', '~> 2.4'
   gem 'russian'
   gem 'sass-rails', '~> 4.0.3'
+  gem 'simple_captcha2', require: 'simple_captcha'
   gem 'simple_form'
   gem 'uglifier', '>= 1.3.0'
-  gem 'simple_captcha2', require: 'simple_captcha'
   gem 'unicorn'
 end
 

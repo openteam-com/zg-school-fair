@@ -223,6 +223,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  airbrake
   annotate
   coffee-rails (~> 4.0.0)
   compass-rails
