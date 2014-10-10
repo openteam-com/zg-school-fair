@@ -2,31 +2,31 @@
   <h1>Анкета-заявка на участие в открытом конкурсе</h1>
   <div class='left'>
     <div class='title'>
-      <span class='orange_star'>*</span> Исполнитель
+      <abbr class='orange_star' title='Обязательное поле'>*</abbr> Исполнитель
     </div>
     <div class='title'>
-      <span class='orange_star'>*</span> Номинации
+      <abbr class='orange_star' title='Обязательное поле'>*</abbr> Номинации
     </div>
     <div class='title'>
       Возрастная категория
     </div>
     <div class='title'>
-      <span class='orange_star'>*</span> Возраст
+      <abbr class='orange_star' title='Обязательное поле'>*</abbr> Возраст
     </div>
     <div class='title'>
       Адрес
     </div>
     <div class='title'>
-      <span class='orange_star'>*</span> Контактный телефон
+      <abbr class='orange_star' title='Обязательное поле'>*</abbr> Контактный телефон
     </div>
     <div class='title'>
-      <span class='orange_star'>*</span> E-mail
+      <abbr title='Обязательное поле' class='orange_star'>*</abbr> E-mail
     </div>
     <div class='title'>
-      <span class='orange_star'>*</span> Название произведения
+      <abbr class='orange_star' title='Обязательное поле'>*</abbr> Название произведения
     </div>
     <div class="title">
-      <span class='orange_star'>*</span> Вид музыкального сопровождения
+      <abbr class='orange_star' title='Обязательное поле'>*</abbr> Вид музыкального сопровождения
     </div>
   </div>
   <div class="right">
@@ -40,7 +40,7 @@
       <%= f.input :email, input_html: { size: 50 }, label: false  %>
       <%= f.input :performance_name, input_html: { size: 50,  }, label: false %>
       <%= f.input :music, input_html: { size: 50, placeholder: 'Указать хронометраж в минутах' }, label: false %>
-      <%= f.input :accept_terms, label: 'Я согласен на обработку персональных данных' %>
+      <%= f.input :accept_terms, label: 'Я согласен на обработку персональных данных', required: true %>
       <%= show_simple_captcha %>
     </div>
     <div style='clear: both'></div>

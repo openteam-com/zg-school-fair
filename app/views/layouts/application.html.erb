@@ -47,12 +47,6 @@
         </div>
       </div>
       <div class="content_wrapper">
-        <% if Rails.env.production? %>
-          <script type="text/javascript" src="//yastatic.net/share/share.js"charset="utf-8"></script>
-          <div class="share_wrapper">
-            <div class="yashare-auto-init" data-yashareL10n="ru"data-yashareQuickServices="vkontakte,facebook,twitter,odnoklassniki,gplus" data-yashareTheme="counter"></div>
-          </div>
-        <% end %>
         <div class="content">
 
           <%= yield %>
@@ -61,6 +55,7 @@
       </div>
     </div>
     <%= render partial: 'commons/footer' %>
+    <%= render partial: 'commons/social_likes' %>
     <% if Rails.env.production? %>
       <%= render partial: 'commons/metrika' %>
     <% end %>
