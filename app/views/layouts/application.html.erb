@@ -13,8 +13,7 @@
   </head>
   <body>
     <div class="outside_wrapper"> <!-- background -->
-      <%= link_to '#', root_path, class: 'self_link' %>
-      <% if flash[:notice]  %>
+      <% if flash[:notice] %>
         <div class="notify_wrapper" align='center'>
           <div class="notify">
             <div class="notify_text">
@@ -24,19 +23,20 @@
         </div>
       <% end %>
       <div class="sponsors">
+        <%= link_to 'Томские таланты', root_path, class: 'self_link' %>
         <div class="zg_sponsor">
-          <%= link_to '#', 'http://znaigorod.ru', target: '_blank' %>
+          <%= link_to 'ЗнайГород', 'http://znaigorod.ru', target: '_blank' %>
         </div>
         <div class="alliance_sponsor">
-          <%= link_to '#', 'http://ars-alliance.ru', target: '_blank' %>
+          <%= link_to 'Арс-Альянс', 'http://ars-alliance.ru', target: '_blank' %>
         </div>
         <div class="csi_sponsor">
         </div>
         <div class="edro_sponsor">
-          <%= link_to '#','http://tomsk.er.ru/', target: '_blank' %>
+          <%= link_to 'Единая Россия Томск','http://tomsk.er.ru/', target: '_blank' %>
         </div>
         <div class="duma_sponsor">
-          <%= link_to '#','http://duma.admin.tomsk.ru/', target: '_blank' %>
+          <%= link_to 'Дума города Томска','http://duma.admin.tomsk.ru/', target: '_blank' %>
         </div>
       </div>
       <div class="navigation">
