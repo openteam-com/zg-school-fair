@@ -8,9 +8,9 @@
       <% if @related_items %>
         <% @related_items.each do |key, value| %>
           <div class="element">
-            <%= link_to value["title"], value["link"] %>
+            <%= link_to value["title"], value["url"] %>
             <%= hidden_field_tag "event[related][]", key, class: "hidden_ids" %>
-            <%= hidden_field_tag "event[related_link][]", value["link"], class: "hidden_links" %>
+            <%= hidden_field_tag "event[related_link][]", value["url"], class: "hidden_links" %>
             <%= hidden_field_tag "event[related_title][]", value["title"], class: "hidden_titles" %>
           </div>
         <% end %>

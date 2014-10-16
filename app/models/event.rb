@@ -1,3 +1,4 @@
+require 'open-uri'
 class Event < ActiveRecord::Base
   attr_accessor :related, :related_link, :related_title
 
@@ -10,10 +11,11 @@ class Event < ActiveRecord::Base
     related_items.destroy_all
 
     related.zip(related_link, related_title).each do |item|
-      r_id, r_link, r_title = item
-      prefix, id = r_id.split('_')
+      item_id, item_link, item_title = item
+      prefix, id = item_id.split('_')
       related_items.create(item_type: prefix, item_id: id)
-      $redis.set r_id, {"link" => r_link, "title" => r_title}.to_json
+
+      $redis.set item_id, open(URI.encode("http://znaigorod.ru/api/single_#{prefix}?id=#{id}")).read
     end
   end
 end
