@@ -14,8 +14,6 @@ $ ->
       <a href="' + url.attr('href') + '">' + url.text() + '</a>
       <span class="del_icon"></span>
       <input name="event[related][]" type="hidden" value="' + $(this).attr('id') + '" class="hidden_ids">
-      <input name="event[related_link][]" type="hidden" value="' + url.attr('href') + '" class="hidden_links">
-      <input name="event[related_title][]" type="hidden" value="' + url.text() + '" class="hidden_titles">
       </div>')
 
   $('#type_select').change ->

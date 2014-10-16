@@ -1,8 +1,8 @@
 require 'open-uri'
 class Event < ActiveRecord::Base
-  attr_accessor :related, :related_link, :related_title
+  attr_accessor :related
 
-  has_many :related_items
+  has_many :related_items, dependent: :destroy
 
   after_save :set_related_items
 
@@ -10,12 +10,11 @@ class Event < ActiveRecord::Base
     return unless related
     related_items.destroy_all
 
-    related.zip(related_link, related_title).each do |item|
-      item_id, item_link, item_title = item
-      prefix, id = item_id.split('_')
+    related.each do |item|
+      prefix, id = item.split('_')
       related_items.create(item_type: prefix, item_id: id)
 
-      $redis.set item_id, open(URI.encode("http://znaigorod.ru/api/single_#{prefix}?id=#{id}")).read
+      $redis.set item, open(URI.encode("http://znaigorod.ru/api/single_#{prefix}?id=#{id}")).read
     end
   end
 end
