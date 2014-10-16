@@ -9,6 +9,8 @@
       <tr>
         <td><%= participant.performer %></td>
         <td><%= time_ago_in_words(participant.created_at) %> назад </td>
+        <td><%= link_to "Удалить", manage_participant_path(participant),
+                                    method: 'DELETE', data: {confirm: "Удалить?"}%></td>
       </tr>
     <% end %>
   </tbody>

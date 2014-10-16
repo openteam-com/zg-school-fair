@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   mount Sidekiq::Web => '/sidekiq'
 
   namespace :manage do
-    resources :participants, only: [:index]
+    resources :participants, only: [:index, :destroy]
     resources :events
     root to: 'events#index'
   end
