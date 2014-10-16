@@ -18,7 +18,9 @@
     </div>
 
     <div class='select_and_search'>
-       <%= select_tag 'type_select', options_for_select([ ['Афиша', 'http://znaigorod.ru/api/afisha_collection'], ['Обзоры', 'http://znaigorod.ru/api/review_collection'] ]) %>
+      <%= select_tag 'type_select', options_for_select([ ['Афиша', 'http://znaigorod.ru/api/afisha_collection'],
+                                                         ['Обзоры', 'http://znaigorod.ru/api/review_collection'],
+                                                         ['Фотостримы', 'http://znaigorod.ru/api/photogallery_collection'] ]) %>
        <%= button_tag '', type: 'button', remote: true, class: 'sbm' %>
        <%= text_field_tag :search, '', placeholder: 'Поиск'  %>
      </div>
