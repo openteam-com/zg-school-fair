@@ -48,7 +48,7 @@
       </div>
       <div class="content_wrapper">
         <div class="content">
-          <% unless controller_name == 'participants' %>
+          <% unless controller_name == 'participants' || !@related_items %>
             <div class="events">
               <ul class='posters'>
                 <% @related_items.each do |key, value| %>

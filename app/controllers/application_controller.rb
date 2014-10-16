@@ -4,6 +4,6 @@ class ApplicationController < ActionController::Base
   before_action :set_related_items
 
   def set_related_items
-    related(Event.last)
+    related(Event.last) if Event.last
   end
 end
