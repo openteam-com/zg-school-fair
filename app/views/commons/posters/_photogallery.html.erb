@@ -7,11 +7,11 @@
       <% info['image'].each_with_index do |image, index| %>
         <% if index == 0 %>
           <li class='photo'>
-            <%= image_tag image, style: 'float: left' %>
+            <%= link_to (image_tag image), info['url'], target: '_blank' %>
           </li>
         <% else %>
           <li class='photo'>
-            <%= image_tag image, size: '116x78', style: 'float: left' %>
+            <%= link_to (image_tag image, size: '116x78'), info['url'], target: '_blank' %>
           </li>
         <% end %>
       <% end %>
