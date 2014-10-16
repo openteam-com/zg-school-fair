@@ -1,0 +1,11 @@
+<li>
+  <div class="title">
+    <%= link_to info['title'], info['url'], target: '_blank' %>
+  </div>
+  <div class="image">
+    <%= link_to (image_tag info['image']), info['url'], target: '_blank' %>
+  </div>
+  <div class="description">
+    <%= info['description'] %>
+  </div>
+</li>

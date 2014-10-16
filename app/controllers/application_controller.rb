@@ -1,9 +1,9 @@
 class ApplicationController < ActionController::Base
+  include ApplicationHelper
   protect_from_forgery with: :exception
-  before_filter :cors_set_access_control_headers
-  skip_before_filter :verify_authenticity_token
+  before_action :set_related_items
 
-  def cors_set_access_control_headers
-    headers['Access-Control-Allow-Origin'] = '*'
+  def set_related_items
+    related(Event.last)
   end
 end

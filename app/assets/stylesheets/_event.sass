@@ -1,20 +1,30 @@
 .events
-  border: 1px solid red
-  height: 200px
   margin: 0 auto
   width: 870px
 
-  .photogallery, .review
-    border: 1px solid #ccc
-    float: left
-    height: 150px
-    margin-right: 20px
-    padding: 10px
-    width: 354px
+  .posters
+    list-style: none !important
+
+    li
+      +border-radius(5px)
+      border: 1px solid #ccc
+      float: left
+      margin: 0 20px 20px 10px
+      padding: 10px
+      width: 354px
 
     .title
-      border: 1px solid green
       font-size: 18px
       line-height: 25px
       margin: 10px 0
       text-align: center
+
+    .image
+      img
+        &:hover
+          +opacity(0.3)
+
+    .description
+      color: #fff
+      font-size: 12px
+      margin: 10px
