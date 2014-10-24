@@ -10,8 +10,8 @@
   <div class="wrapper">
     <div class="left">
       <ul>
-        <li><%= link_to 'События', manage_events_path %></li>
-        <li><%= link_to 'Участники', manage_participants_path %></li>
+        <li class="<%= 'selected' if controller_name == 'events' %>"><%= link_to 'События', manage_events_path %></li>
+        <li class="<%= 'selected' if controller_name == 'participants' %>"><%= link_to 'Участники', manage_participants_path %></li>
       </ul>
     </div>
     <div class="right">
