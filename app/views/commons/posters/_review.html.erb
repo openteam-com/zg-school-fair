@@ -3,9 +3,28 @@
     <%= link_to info['title'], info['url'], target: '_blank' %>
   </div>
   <div class="image">
-    <%= link_to (image_tag info['image']), info['url'], target: '_blank' %>
+    <% if info['image'].is_a?(Array) %>
+      <ul>
+        <% info['image'].each_with_index do |image, index| %>
+          <% if index == 0 %>
+            <li class='photo'>
+              <%= link_to (image_tag image), info['url'], target: '_blank' %>
+            </li>
+          <% else %>
+            <li class='photo'>
+              <%= link_to (image_tag image, size: '116x78'), info['url'], target: '_blank' %>
+            </li>
+          <% end %>
+        <% end %>
+      </ul>
+    <% else %>
+      <div class="image">
+        <%= link_to (image_tag info['image']), info['url'], target: '_blank' %>
+      </div>
+    <% end %>
   </div>
   <div class="description">
     <%= info['description'] %>
   </div>
 </li>
+
