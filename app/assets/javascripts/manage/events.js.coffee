@@ -1,4 +1,10 @@
 $ ->
+  $('.sticky_elements').on 'click', '.element', ->
+    button_id  = '#' + $(this).find('.hidden_ids').val()
+    $('.posters').find(button_id).prop('disabled', false).text('Добавить')
+    $(this).remove()
+    true
+
   perform_ajax()
 
   $('#search').keyup ->
@@ -12,7 +18,7 @@ $ ->
 
     $('.sticky_elements').append('<div class="element">
       <a href="' + url.attr('href') + '">' + url.text() + '</a>
-      <span class="del_icon"></span>
+      <span class="del_icon"><a href="#">x</a></span>
       <input name="event[related][]" type="hidden" value="' + $(this).attr('id') + '" class="hidden_ids">
       </div>')
 
@@ -29,6 +35,8 @@ get_related_ids = ->
 
 get_ajax_url = ->
   $('#type_select option:selected').val() || 'http://znaigorod.ru/api/afisha_collection'
+
+
 
 perform_ajax = ->
   $.ajax

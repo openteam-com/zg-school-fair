@@ -1,20 +1,20 @@
 <%= simple_form_for [:manage, @event] do |f| %>
   <%= f.input :title  %>
   <%= f.input :when %>
-  <%= f.submit 'Создать' %>
 
-  <div class="related_items_wrapper">
-    <div class="sticky_elements">
-      <% if @related_items %>
-        <% @related_items.each do |key, value| %>
-          <div class="element">
-            <%= link_to value["title"], value["url"] %>
-            <%= hidden_field_tag "event[related][]", key, class: "hidden_ids" %>
-          </div>
-        <% end %>
+  <div class="sticky_elements">
+    <% if @related_items %>
+      <% @related_items.each do |key, value| %>
+        <div class="element">
+          <%= link_to value["title"].truncate(30), value["url"] %>
+          <%= hidden_field_tag "event[related][]", key, class: "hidden_ids" %>
+          <span class='del_icon'><%= link_to'x','#' %></span>
+        </div>
       <% end %>
-    </div>
-
+    <% end %>
+  </div>
+  <div style="clear: both"> </div>
+  <div class="related_items_wrapper">
     <div class='select_and_search'>
       <%= select_tag 'type_select', options_for_select([ ['Афиша', 'http://znaigorod.ru/api/afisha_collection'],
                                                          ['Обзоры', 'http://znaigorod.ru/api/review_collection'],
@@ -25,4 +25,5 @@
 
     <ul class='posters'></ul>
   </div>
+  <%= f.submit 'Сохранить', :class => 'save' %>
 <% end %>
