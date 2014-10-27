@@ -24,18 +24,18 @@ end
 
 # == Schema Information
 #
-# Table name: participants
+# Table name: proposals
 #
 #  id               :integer          not null, primary key
 #  performer        :string(255)
-#  nomination       :string(255)
-#  auditory         :string(255)
+#  nomination       :text
+#  auditory         :text
 #  age              :integer
 #  address          :string(255)
 #  phone            :string(255)
 #  email            :string(255)
 #  performance_name :string(255)
-#  music            :string(255)
+#  music            :integer
 #  accept_terms     :boolean
 #  created_at       :datetime
 #  updated_at       :datetime

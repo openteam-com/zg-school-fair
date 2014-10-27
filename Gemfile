@@ -21,6 +21,8 @@ group :default do
   gem 'uglifier', '>= 1.3.0'
   gem 'unicorn'
   gem 'sinatra'
+  gem 'paperclip'
+  gem 'paperclip-elvfs'
 end
 
 group :development do
