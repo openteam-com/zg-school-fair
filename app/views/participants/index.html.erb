@@ -1,3 +1,6 @@
+<% filter_link.each do |link| %>
+  <%= link_to link.text, participants_path(order_by: link)%>
+<% end %>
 <ul>
 <% @participants.each do |participant| %>
   <li><%= image_tag participant.image_url %></li>

@@ -3,6 +3,12 @@ class Participant < ActiveRecord::Base
 
   has_attached_file :image, storage: :elvfs, elvfs_url: Settings['storage.url']
 
+  scope :vokal, -> {where('nomination like ?','%vokal%')}
+  scope :choreography, -> {where('nomination like ?','%choreography%')}
+  scope :poem, -> {where('nomination like ?','%poem%')}
+  scope :minute_of_fame, -> {where('nomination like ?','%minute_of_fame%')}
+  scope :art, -> {where('nomination like ?','%art%')}
+
   extend Enumerize
   serialize :nomination, Array
   enumerize :nomination,
