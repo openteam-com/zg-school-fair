@@ -2,7 +2,7 @@ class ParticipantsController < ApplicationController
   helper_method :filter_link, :order_by
 
   def index
-    @participants = Participant.send(order_by)
+    @participants = Participant.send(order_by).order(created_at: :desc)
   end
 
   protected
