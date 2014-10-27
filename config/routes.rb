@@ -17,5 +17,5 @@ Rails.application.routes.draw do
   get 'about',            as: :about, to: 'static_pages#about'
   get 'show_conditions',  as: :show_conditions, to: 'static_pages#show_conditions'
 
-  root to: 'static_pages#about'
+  root to: 'events#index'
 end
