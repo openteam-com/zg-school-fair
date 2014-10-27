@@ -1,24 +1,24 @@
 <p>
-  Поступила новая заявка от  <%= @participant.performer  %>
+  Поступила новая заявка от  <%= @proposal.performer  %>
 </p>
 <p>
-  В номинациях <%= @participant.nomination.map(&:text) %>
+  В номинациях <%= @proposal.nomination.map(&:text) %>
 </p>
 <p>
-  Для аудитории <%= @participant.auditory.map(&:text) %>
+  Для аудитории <%= @proposal.auditory.map(&:text) %>
 </p>
 <p>
-  Возраст <%= @participant.age %>
+  Возраст <%= @proposal.age %>
 </p>
 <p>
-  Адрес <%= @participant.address %>
+  Адрес <%= @proposal.address %>
 </p>
 <p>
-  Телефон <%= @participant.phone %>
+  Телефон <%= @proposal.phone %>
 </p>
 <p>
-  E-mail <%= @participant.email %>
+  E-mail <%= @proposal.email %>
 </p>
 <p>
-  Произведение <%= @participant.performance_name %> длительностью <%= @participant.music %>
+  Произведение <%= @proposal.performance_name %> длительностью <%= @proposal.music %>
 </p>

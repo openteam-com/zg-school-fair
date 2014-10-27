@@ -1,4 +1,4 @@
-class Participant < ActiveRecord::Base
+class Proposal < ActiveRecord::Base
   extend Enumerize
   attr_accessor :accept_terms
 

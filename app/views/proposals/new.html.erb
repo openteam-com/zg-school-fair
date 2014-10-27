@@ -30,7 +30,7 @@
     </div>
   </div>
   <div class="right">
-    <%= simple_form_for @participant do |f| %>
+    <%= simple_form_for @proposal do |f| %>
       <%= f.input :performer, input_html: { size: 50, placeholder: 'Ф.И.О или название коллектива' }, label: false %>
       <%= f.input :nomination, as: :check_boxes, label: false %>
       <%= f.input :auditory, as: :check_boxes, label: false %>

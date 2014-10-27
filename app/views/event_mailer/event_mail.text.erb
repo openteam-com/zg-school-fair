@@ -1,8 +1,8 @@
-Поступила новая заявка от  <%= @participant.performer  %>
-В номинациях <%= @participant.nomination.map(&:text) %>
-Для аудитории <%= @participant.auditory.map(&:text) %>
-Возраст <%= @participant.age %>
-Адрес <%= @participant.address %>
-Телефон <%= @participant.phone %>
-E-mail <%= @participant.email %>
-Произведение <%= @participant.performance_name %> длительностью <%= @participant.music %>
+Поступила новая заявка от  <%= @proposal.performer  %>
+В номинациях <%= @proposal.nomination.map(&:text) %>
+Для аудитории <%= @proposal.auditory.map(&:text) %>
+Возраст <%= @proposal.age %>
+Адрес <%= @proposal.address %>
+Телефон <%= @proposal.phone %>
+E-mail <%= @proposal.email %>
+Произведение <%= @proposal.performance_name %> длительностью <%= @proposal.music %>

@@ -1,16 +1,16 @@
-class ParticipantsController < ApplicationController
+class ProposalsController < ApplicationController
   include SimpleCaptcha::ControllerHelpers
 
   def new
-    @participant = Participant.new
+    @proposal = Proposal.new
   end
 
   def create
-    @participant = Participant.new(participant_params)
+    @proposal = Proposal.new(proposal_params)
     if simple_captcha_valid?
-      if @participant.save
+      if @proposal.save
         flash[:notice] = "Ваша заявка принята"
-        EventMailer.delay.event_mail(@participant)
+        EventMailer.delay.event_mail(@proposal)
         redirect_to about_path
       else
         render :new
@@ -22,8 +22,8 @@ class ParticipantsController < ApplicationController
 
   private
 
-  def participant_params
-    params.require(:participant).permit(:performer, :age, :address, :phone, :email, :performance_name,
+  def proposal_params
+    params.require(:proposal).permit(:performer, :age, :address, :phone, :email, :performance_name,
                                         :music, :accept_terms, :nomination => [], :auditory => [])
   end
 end
