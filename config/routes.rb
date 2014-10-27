@@ -8,8 +8,8 @@ Rails.application.routes.draw do
     root to: 'events#index'
   end
 
-  resources :events, only: [:index, :show] do
-    post 'send_event', as: :send,        on: :collection
+  resources :events, only: [:index] do
+    post 'send_event', as: :send, on: :collection
   end
 
   resources :proposals, only: [:new, :create]
