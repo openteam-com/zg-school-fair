@@ -1,14 +1,39 @@
 .participants
   margin: 0 auto
-  width: 870px
+  width: 830px
 
-  .navigation
-    .links_wrapper
+  .filter
+    .link
+      float: left
+      margin: 0 10px 0 0
+      padding: 5px
 
-      span
-        float: left
-        margin-right: -6px
-        z-index: 10
+      &.art
+        width: 200px
+        text-align: center
+
+      &.selected
+        +border-radius(5px)
+        background-color: #3f3a7b
+
+        a
+          color: white
+
+      &:hover
+        +border-radius(5px)
+        background-color: #3f3a7b
+
+        a
+          color: white
+
+      &:first-child
+        margin: 0 10px 0 35px
+
+      a
+        background-color: transparent
+        font-size: 14px
+        color: #5a63ec
+
   ul
     +inline-block
     list-style: none !important

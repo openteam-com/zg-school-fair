@@ -1,13 +1,11 @@
 <div class="participants">
-  <div class="navigation">
-    <div class="links_wrapper">
-      <span class="<%= 'selected' if order_by == 'all' %>"><%= link_to 'Все', participants_path %></span>
+  <div class="filter">
+      <div class="link all <%= 'selected' if order_by == 'all' %>"><%= link_to 'Все', participants_path %></div>
       <% filter_link.each do |link| %>
-        <span class="<%= 'selected' if order_by == link %>">
+        <div class="link <%= link %> <%= 'selected' if order_by == link %>">
           <%= link_to link.text, participants_path(order_by: link)%>
-        </span>
+        </div>
       <% end %>
-    </div>
   </div>
   <ul>
     <% @participants.each do |participant| %>
