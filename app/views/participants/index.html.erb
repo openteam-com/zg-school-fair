@@ -1,8 +1,24 @@
-<% filter_link.each do |link| %>
-  <%= link_to link.text, participants_path(order_by: link)%>
-<% end %>
-<ul>
-<% @participants.each do |participant| %>
-  <li><%= image_tag participant.image_url %></li>
-<% end %>
-</ul>
+<div class="participants">
+  <div class="navigation">
+    <div class="links_wrapper">
+      <span class="<%= 'selected' if order_by == 'all' %>"><%= link_to 'Все', participants_path %></span>
+      <% filter_link.each do |link| %>
+        <span class="<%= 'selected' if order_by == link %>">
+          <%= link_to link.text, participants_path(order_by: link)%>
+        </span>
+      <% end %>
+    </div>
+  </div>
+  <ul>
+    <% @participants.each do |participant| %>
+      <li class='item'>
+        <div class="name">
+          <%= participant.full_name  %>
+        </div>
+        <div class="image">
+          <%= image_tag resized_image_url(participant.image_url, 370, 200, options = { :crop => '!', :magnify => 'm', :orientation => 'n'  }), size: '370x200' %>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+</div>

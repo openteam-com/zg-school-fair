@@ -1,5 +1,5 @@
 class ParticipantsController < ApplicationController
-  helper_method :filter_link
+  helper_method :filter_link, :order_by
 
   def index
     @participants = Participant.send(order_by)
