@@ -1,5 +1,8 @@
 class EventsController < ApplicationController
+  include EventsHelper
+
   def index
+    @related_items = related(Event.last)
   end
 
   def send_event

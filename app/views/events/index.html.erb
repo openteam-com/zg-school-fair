@@ -1,11 +1,9 @@
-<% unless controller_name == 'proposals' || !@related_items %>
-  <% cache('relations', :expires_in => 10.minutes) do %>
-    <div class="events">
-      <ul class='posters'>
-        <% @related_items.each do |key, value| %>
-          <%= render partial: "commons/posters/#{key.split('_').first}", locals: { info: value  } %>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+<% cache('relations', :expires_in => 10.minutes) do %>
+  <div class="events">
+    <ul class='posters'>
+      <% @related_items.each do |key, value| %>
+        <%= render partial: "commons/posters/#{key.split('_').first}", locals: { info: value  } %>
+      <% end %>
+    </ul>
+  </div>
 <% end %>
