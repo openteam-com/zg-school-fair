@@ -7,18 +7,18 @@
         </div>
       <% end %>
   </div>
-  <% cache 'participants', :expires_in => 10.minutes  do %>
     <ul>
       <% @participants.each do |participant| %>
-        <li class='item'>
-          <div class="name">
-            <%= participant.full_name  %>
-          </div>
-          <div class="image">
-            <%= image_tag resized_image_url(participant.image_url, 370, 200, options = { :crop => '!', :magnify => 'm', :orientation => 'n'  }), size: '370x200' %>
-          </div>
-        </li>
+        <% cache "participants_#{participant.id}", :expires_in => 10.minutes  do %>
+          <li class='item'>
+            <div class="name">
+              <%= participant.full_name  %>
+            </div>
+            <div class="image">
+              <%= image_tag resized_image_url(participant.image_url, 370, 200, options = { :crop => '!', :magnify => 'm', :orientation => 'n'  }), size: '370x200' %>
+            </div>
+          </li>
+        <% end %>
       <% end %>
     </ul>
-  <% end %>
 </div>
