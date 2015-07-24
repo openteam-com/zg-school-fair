@@ -4,17 +4,9 @@ class Proposal < ActiveRecord::Base
 
   after_validation :check_terms_accepted
 
-  validates_presence_of :performer, :nomination, :age, :phone, :email, :performance_name, :music
+  validates_presence_of :title, :phone, :format, :category, :accept_terms
 
-  serialize :nomination, Array
-  enumerize :nomination,
-    in: [:vokal, :choreography,:poem, :minute_of_fame, :art],
-    multiple: true
-
-  serialize :auditory, Array
-  enumerize :auditory,
-    in: [:schoolboys, :young_workers, :students, :older_people],
-    multiple: true
+  enumerize :format, in: [:full_time, :absentia]
 
   def check_terms_accepted
     errors[:accept_terms] << 'Необходимо принять пользовательское соглашение' unless accept_terms == '1'
