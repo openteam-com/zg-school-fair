@@ -1,6 +1,6 @@
 <%= simple_form_for [:manage, @event] do |f| %>
   <%= f.input :title  %>
-  <%= f.input :when %>
+  <%= f.input :category if @event.slug == 'school-fair-participants' %>
 
   <div class="sticky_elements">
     <% if @related_items %>
@@ -16,9 +16,6 @@
   <div style="clear: both"> </div>
   <div class="related_items_wrapper">
     <div class='select_and_search'>
-      <%= select_tag 'type_select', options_for_select([ ['Афиша', 'http://znaigorod.ru/api/afisha_collection'],
-                                                         ['Обзоры', 'http://znaigorod.ru/api/review_collection'],
-                                                         ['Фотостримы', 'http://znaigorod.ru/api/photogallery_collection'] ]) %>
        <%= button_tag '', type: 'button', remote: true, class: 'sbm' %>
        <%= text_field_tag :search, '', placeholder: 'Поиск'  %>
      </div>

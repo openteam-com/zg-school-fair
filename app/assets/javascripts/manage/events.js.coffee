@@ -34,9 +34,7 @@ get_related_ids = ->
   related_ids
 
 get_ajax_url = ->
-  $('#type_select option:selected').val() || 'http://znaigorod.ru/api/afisha_collection'
-
-
+  $('#type_select option:selected').val() || 'http://znaigorod.ru/api/review_collection'
 
 perform_ajax = ->
   $.ajax

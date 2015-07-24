@@ -1,7 +1,0 @@
-<%= simple_form_for [:manage, @participant] do |f| %>
-  <%= f.input :full_name %>
-  <%= f.input :description %>
-  <%= f.input :nomination, as: :check_boxes%>
-  <%= f.input :image %>
-  <%= f.submit 'Сохранить', :class => 'save' %>
-<% end %>

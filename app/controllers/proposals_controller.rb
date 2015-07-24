@@ -7,14 +7,10 @@ class ProposalsController < ApplicationController
 
   def create
     @proposal = Proposal.new(proposal_params)
-    if simple_captcha_valid?
-      if @proposal.save
-        flash[:notice] = "Ваша заявка принята"
-        EventMailer.delay.event_mail(@proposal)
-        redirect_to about_path
-      else
-        render :new
-      end
+
+    if simple_captcha_valid? && @proposal.save
+      flash[:notice] = "Ваша заявка принята"
+      redirect_to about_path
     else
       render :new
     end
@@ -23,7 +19,6 @@ class ProposalsController < ApplicationController
   private
 
   def proposal_params
-    params.require(:proposal).permit(:performer, :age, :address, :phone, :email, :performance_name,
-                                        :music, :accept_terms, :nomination => [], :auditory => [])
+    params.require(:proposal).permit(:title, :category, :phone, :format, :space)
   end
 end

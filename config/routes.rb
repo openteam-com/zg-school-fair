@@ -9,15 +9,10 @@ Rails.application.routes.draw do
     root to: 'events#index'
   end
 
-  resources :events, only: [:index] do
-    post 'send_event', as: :send, on: :collection
-  end
+  get 'about_fair', as: 'about_fair', to: 'events#index', defaults: { event_id: 'school-fair-about' }
+  get 'fair_participants', as: 'fair_participants', to: 'events#index', defaults: { event_id: 'school-fair-participants' }
 
   resources :proposals,     only: [:new, :create]
-  resources :participants,  only: [:index]
 
-  get 'about',            as: :about, to: 'static_pages#about'
-  get 'show_conditions',  as: :show_conditions, to: 'static_pages#show_conditions'
-
-  root to: 'events#index'
+  root to: redirect('/about_fair')
 end

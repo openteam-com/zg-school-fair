@@ -1,10 +1,17 @@
 require 'open-uri'
+
 class Event < ActiveRecord::Base
   attr_accessor :related
 
   has_many :related_items, dependent: :destroy
 
   after_save :set_related_items
+
+  extend FriendlyId
+  friendly_id :title, use: :slugged
+
+  extend Enumerize
+  enumerize :category, in: [:vokal, :choreography, :poem, :minute_of_fame, :art]
 
   def set_related_items
     return unless related

@@ -7,7 +7,7 @@
   <tbody>
     <% @proposals.each do |proposal| %>
       <tr>
-        <td><%= proposal.performer %></td>
+        <td><%= proposal.title %></td>
         <td><%= time_ago_in_words(proposal.created_at) %> назад </td>
         <td><%= link_to "Удалить", manage_proposal_path(proposal), method: 'DELETE', data: {confirm: "Удалить?"}%></td>
       </tr>
