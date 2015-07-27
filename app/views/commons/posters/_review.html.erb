@@ -1,30 +1,31 @@
-<li class='item'>
-  <div class="title">
-    <%= link_to info['title'], info['url'], target: '_blank' %>
-  </div>
-  <div class="image">
-    <% if info['image'].is_a?(Array) %>
-      <ul>
-        <% info['image'].each_with_index do |image, index| %>
-          <% if index == 0 %>
-            <li class='photo'>
-              <%= link_to (image_tag image), info['url'], target: '_blank' %>
-            </li>
-          <% else %>
-            <li class='photo'>
-              <%= link_to (image_tag image, size: '116x78'), info['url'], target: '_blank' %>
-            </li>
+<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 poster-wrapper">
+  <div class="poster">
+    <div class="title center-block">
+      <%= link_to info['title'], info['url'], target: '_blank' %>
+    </div>
+    <div class="image">
+      <% if info['image'].is_a?(Array) %>
+        <ul>
+          <% info['image'].each_with_index do |image, index| %>
+            <% if index == 0 %>
+              <li class='photo'>
+                <%= link_to (image_tag image), info['url'], target: '_blank' %>
+              </li>
+            <% else %>
+              <li class='photo'>
+                <%= link_to (image_tag image, size: '116x78'), info['url'], target: '_blank' %>
+              </li>
+            <% end %>
           <% end %>
-        <% end %>
-      </ul>
-    <% else %>
-      <div class="image">
-        <%= link_to (image_tag info['image']), info['url'], target: '_blank' %>
-      </div>
-    <% end %>
+        </ul>
+      <% else %>
+        <div class="image">
+          <%= link_to (image_tag info['image'], class: "img-responsive"), info['url'], target: '_blank' %>
+        </div>
+      <% end %>
+    </div>
+    <div class="description">
+      <%= info['description'] %>
+    </div>
   </div>
-  <div class="description">
-    <%= info['description'] %>
-  </div>
-</li>
-
+</div>
