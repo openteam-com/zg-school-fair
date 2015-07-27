@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 group :default do
   gem 'airbrake'
+  gem 'bootstrap-sass', '~> 3.3.5'
   gem 'coffee-rails', '~> 4.0.0'
   gem 'compass-rails'
   gem 'configliere'

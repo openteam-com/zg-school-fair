@@ -1,160 +1,58 @@
 body
-  font-family: 'Verdana'
-  background-color: black
-  color: white
-
-  a
-    color: #67c2ea
-    text-decoration: none
-
-    &:hover
-      text-decoration: underline
-
-.outside_wrapper
   background: transparent image-url('background.jpg') no-repeat center top
 
-  .sponsors, .navigation
-    height: 68px
-    margin: 0 auto
-    width: 885px
+.main-wrapper
 
-  .navigation
-    height: 35px
+  .header-wrapper
 
-  .sponsors
-    position: relative
+    .navigation-wrapper
 
-    .self_link
-      height: 122px
-      left: -52px
-      position: absolute
-      text-indent: -9999px
-      top: 0
-      width: 329px
+      img
+        margin: 30px 0 20px
 
-    .duma_sponsor, .edro_sponsor, .csi_sponsor, .alliance_sponsor, .zg_sponsor
-      float: right
-      height: 68px
-      margin-right: 5px
+      li
 
-      a
-        display: block
-        height: 68px
-        text-indent: -999999px
+        a
+          color: black
+          padding: 5px
+          margin: 2px 3px 0 0
+          border-radius: 5px
 
-    .duma_sponsor
-      background: transparent image-url('duma.png') no-repeat center top
-      width: 89px
+        &.active
+          a
+            background-color: #a7a7a7
+            color: white
 
-      a
-        width: 89px
+        a
+          &:hover
+            background-color: #a7a7a7
+            color: white
 
-    .edro_sponsor
-      background: transparent image-url('edro.png') no-repeat center top
-      width: 48px
-
-      a
-        width: 48px
-
-    .csi_sponsor
-      background: transparent image-url('csi.png') no-repeat center top
-      width: 118px
-
-      a
-        width: 118px
-
-    .alliance_sponsor
-      background: transparent image-url('alliance.png') no-repeat center top
-      width: 95px
-
-      a
-        width: 95px
-
-    .zg_sponsor
-      background: transparent image-url('zg.png') no-repeat center top
-      width: 119px
-      margin-right: 0
-
-      a
-        width: 119px
-
-  .navigation
-    .links_wrapper
+    .button-wrapper
+      padding: 0
       margin-top: 20px
 
-      span
-        display: table-cell
-        float: right
-        margin-right: 10px
-        vertical-align: middle
+      button
+        background-color: #a7a7a7
 
-        a
-          +border-radius(5px)
-          background-color: transparent
-          font-size: 14px
-          height: 26px
-          padding: 4px 15px
-          text-align: center
-          color: #5a63ec
+    .organizators-wrapper
+      margin-top: 15px
 
-          &:first-child
-            margin-right: 0
+  .content-wrapper, .footer-wrapper
+    background-color: #ffffff
 
-          &:hover
-            background-color: #3f3a7b
-            color: white
+  .content-wrapper
+    .sponsors-wrapper
+      border-top: 1px solid #a7a7a7
 
-      .selected
-        a
-          background-color: #3f3a7b
-          color: white
+      h3
+        color: #00916d
 
-  .content_wrapper
-    clear: both
-    margin: 0 auto
-    padding: 20px
-    +box-sizing(border-box)
-    width: 870px
-    min-height: 200px
-    background-color: rgba(#101326, .85)
-    +border-radius(10px)
+.footer-wrapper
+  background-color: #f2f2f2
 
-    .share_wrapper
-      width: 300px
-      margin: 0 auto
-      text-align: center
+  h5,p
+    color: #666666
 
-    .yashare-auto-init
-      width: 100%
-
-    .content
-      p
-        margin: 10px 0 10px 0
-      ul
-        clear: both
-        list-style: disc
-        margin-left: 15px
-
-        li
-          color: #f9b421
-          font-size: 16px
-
-          span
-            color: white
-            font-size: 12px
-            line-height: 18px !important
-
-h1
-  font-size: 14px
-  font-weight: bold
-  color: #f9b421
-
-.highlight
-  color: #f9b421 !important
-
-.divider
-  background-color: #343b65
-  height: 2px
-  margin: 10px 0 10px -20px
-  padding-right: 40px
-  width: 100%
+  h5
+    font-weight: bold

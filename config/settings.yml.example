@@ -1,5 +1,5 @@
 app:
-  secret:
+  secret: fb3fe1914f1a45752eaff348a18fdf81df5904ad4f2b0104ebfbd668400edb9fb8ea4f306cf29efe6e0d0f07afe07ad2b00c8a824c85a80735afad4a2f6ad280
 
 redis:
   host:

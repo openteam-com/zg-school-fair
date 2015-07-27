@@ -10,55 +10,91 @@
     <meta name='description' content='Открытый конкурс «Томские таланты» — открытая арт-арена, творческая площадка, конкурс талантов, посвященный празднованию 410-летия г. Томска, проходящего в рамках Года культуры в России.'/>
     <meta name='title' content='Томские таланты'/>
     <meta property="og:image" content="http://storage.znaigorod.ru/files/176399/260-126/og_image.jpg">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
   <body>
-    <div class="outside_wrapper"> <!-- background -->
-      <% if flash[:notice] %>
-        <div class="notify_wrapper" align='center'>
-          <div class="notify">
-            <div class="notify_text">
-              <%= flash[:notice] %>
+    <div class="container-fluid">
+      <div class="container main-wrapper">
+        <!-- HEADER--!>
+        <div class="row header-wrapper">
+          <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 hidden-xs">
+            <%= link_to image_tag('fair-logo.png', class: "img-responsive"), root_path %>
+          </div>
+          <div class="col-xs-10 col-sm-6 col-md-6 col-lg-6">
+            <div class="row navigation-wrapper">
+              <div class="col-xs-12 col-md-12 col-sm-12 col-lg-12">
+                <%= image_tag('navigation-text.png', class: "img-responsive") %>
+              </div>
+              <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav center-block">
+                  <li role="presentation" class="<%= 'active' if params[:event_id] == 'school-fair-about' %>"><%= link_to 'О ЯРМАРКЕ', about_fair_path %></li>
+                  <li role="presentation" class="<%= 'active' if params[:event_id] == 'school-fair-participants' %>"><%= link_to 'УЧАСТНИКИ', fair_participants_path %></li>
+                  <li role="presentation" class="<%= 'active' if action_name == 'new' %>"><%= link_to 'ОСТАВИТЬ ЗАЯВКУ', new_proposal_path %></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-2 hidden-sm hidden-md hidden-lg button-wrapper">
+            <div class="navbar-default">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+            </div>
+          </div>
+          <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 hidden-xs">
+            <div class="row organizators-wrapper">
+              <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <%= link_to image_tag('zg-logo.png', class: "img-responsive pull-right"), 'http://znaigorod.ru/' %>
+              </div>
+              <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <%= link_to image_tag('emerald-logo.png', class: "img-responsive pull-right"), 'http://izumrudniy.tomsk.ru/' %>
+              </div>
             </div>
           </div>
         </div>
-      <% end %>
-      <div class="sponsors">
-        <%= link_to 'Томские таланты', root_path, class: 'self_link' %>
-        <div class="zg_sponsor">
-          <%= link_to 'ЗнайГород', 'http://znaigorod.ru', target: '_blank' %>
-        </div>
-        <div class="alliance_sponsor">
-          <%= link_to 'Арс-Альянс', 'http://ars-alliance.ru', target: '_blank' %>
-        </div>
-        <div class="csi_sponsor">
-        </div>
-        <div class="edro_sponsor">
-          <%= link_to 'Единая Россия Томск','http://tomsk.er.ru/', target: '_blank' %>
-        </div>
-        <div class="duma_sponsor">
-          <%= link_to 'Дума города Томска','http://duma.admin.tomsk.ru/', target: '_blank' %>
-        </div>
-      </div>
-      <div class="navigation">
-        <div class="links_wrapper">
-          <span class="<%= 'selected' if action_name == 'new' %>"><%= link_to 'ОСТАВИТЬ ЗАЯВКУ', new_proposal_path  %></span>
-          <span class="<%= 'selected' if params[:event_id] == 'school-fair-participants' %>"><%= link_to 'УЧАСТНИКИ', fair_participants_path %></span>
-          <span class="<%= 'selected' if params[:event_id] == 'school-fair-about' %>"> <%= link_to 'О ЯРМАРКЕ', about_fair_path %></span>
-        </div>
-      </div>
-      <div class="content_wrapper">
-        <div class="content">
-          <%#= render partial: 'commons/banner' %>
+        <!-- /HEADER -->
 
-          <%= yield %>
-
+        <!-- CONTENT -->
+        <div class="row content-wrapper">
+          <div class="col-lg-12">
+            <%= yield %>
+          </div>
+          <div class="col-lg-12 ">
+            <div class="sponsors-wrapper">
+              <h3>Партнеры проекта</h3>
+            </div>
+          </div>
         </div>
+        <!-- /CONTENT -->
+
       </div>
     </div>
-    <%= render partial: 'commons/footer' %>
-    <%= render partial: 'commons/social_likes' %>
-    <% if Rails.env.production? %>
-      <%= render partial: 'commons/metrika' %>
-    <% end %>
+    <div class="container-fluid footer-wrapper navbar-fixed-bottom">
+      <div class="container">
+        <!-- FOOTER -->
+        <div class="row">
+          <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+            <h5>ПО ВОПРОСАМ УЧАСТИЯ:</h5>
+            <p>Екатерина Мячина</p>
+            <p>- менеджер по работе с клиентами</p>
+            <p>+7-953-918-34-74</p>
+            <p><%= mail_to "mev@znaigrod.ru" %></p>
+          </div>
+          <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+            <h5>ПО ВОПРОСАМ ПАРТНЕРСТВА:</h5>
+            <p>Елена Бараксанова</p>
+            <p>- куратор проекта</p>
+            <p>+7-952-802-53-52</p>
+            <p><%= mail_to "elena@znaigorod.ru"%></p>
+          </div>
+          <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+          </div>
+        </div>
+        <!-- /FOOTER -->
+      </div>
+    </div>
   </body>
 </html>
