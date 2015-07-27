@@ -6,4 +6,8 @@ module EventsHelper
       end
     }
   end
+
+  def image_real_size(image)
+    image.sub(/\d{2,}-\d{2,}!mn\//,"")
+  end
 end

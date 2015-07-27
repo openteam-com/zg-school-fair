@@ -1,11 +1,7 @@
 $ ->
   $(window).load ->
 
-    list = $('.posters')
-
-    columnWidth = list.data('item-width')
+    list = $('.reviews-wrapper')
 
     $container = list.isotope
-      itemSelector: '.item'
-      masonry:
-        columnWidth: columnWidth
+      itemSelector: '.poster-wrapper'
