@@ -1,14 +1,6 @@
 ru:
   enumerize:
-    nomination:
-      vokal: Вокал
-      choreography: Хореография
-      poem: Художественное слово
-      minute_of_fame: Минута славы
-      art: Декоративно-прикладное искусство
+    participant_type:
+      full_time: Очное
+      absentia: Заочное
 
-    auditory:
-      schoolboys: школьники
-      young_workers: рабочая молодежь
-      students: студенты
-      older_people: люди старшего поколения

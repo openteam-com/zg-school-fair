@@ -8,7 +8,7 @@ class ProposalsController < ApplicationController
   def create
     @proposal = Proposal.new(proposal_params)
 
-    if simple_captcha_valid? && @proposal.save
+    if @proposal.save
       flash[:notice] = "Ваша заявка принята"
       redirect_to about_path
     else
@@ -19,6 +19,6 @@ class ProposalsController < ApplicationController
   private
 
   def proposal_params
-    params.require(:proposal).permit(:title, :category, :phone, :format, :space)
+    params.require(:proposal).permit(:title, :category, :phone, :participant_type, :space)
   end
 end

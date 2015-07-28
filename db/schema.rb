@@ -41,7 +41,7 @@ ActiveRecord::Schema.define(version: 20150724054132) do
     t.string   "title"
     t.string   "category"
     t.string   "phone"
-    t.string   "format"
+    t.string   "participant_type"
     t.integer  "space"
     t.datetime "created_at"
     t.datetime "updated_at"

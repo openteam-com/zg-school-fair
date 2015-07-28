@@ -4,7 +4,7 @@ class CreateParticipants < ActiveRecord::Migration
       t.string :title,
                :category,
                :phone,
-               :format
+               :participant_type
 
       t.integer :space
 
