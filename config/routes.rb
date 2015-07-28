@@ -4,8 +4,8 @@ Rails.application.routes.draw do
 
   namespace :manage do
     resources :proposals, only: [:index, :destroy]
-    resources :events,    except: [:show]
-    root to: redirect('/manage/events')
+    resources :events,    only: [:edit, :update]
+    root to: redirect('/manage/events/school-fair-about/edit')
   end
 
   get 'about_fair', as: 'about_fair', to: 'events#index', defaults: { event_id: 'school-fair-about' }

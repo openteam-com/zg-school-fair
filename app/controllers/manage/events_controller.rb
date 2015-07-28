@@ -1,22 +1,6 @@
 class Manage::EventsController < Manage::ApplicationController
-  def index
-    @events = Event.all
-  end
-
-  def new
-    @event = Event.new
-  end
-
-  def create
-    @event = Event.new(event_params)
-    if @event.save
-      redirect_to manage_events_path
-    else
-      render :new
-    end
-  end
-
   def edit
+    @events = Event.all
     @event = Event.find(params[:id])
     @related_items = {}.tap{ |hash|
       @event.related_items.each do |item|
@@ -28,19 +12,11 @@ class Manage::EventsController < Manage::ApplicationController
   def update
     @event = Event.find(params[:id])
     if @event.update_attributes(event_params)
-      redirect_to manage_events_path
+      flash[:notice] = "Информация сохранена"
+      redirect_to edit_manage_event_path(@event)
     else
       render :edit
     end
-  end
-
-  def show
-    @event = Event.find(params[:id])
-  end
-
-  def destroy
-    Event.find(params[:id]).destroy
-    redirect_to manage_events_path
   end
 
   private

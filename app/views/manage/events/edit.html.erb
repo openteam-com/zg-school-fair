@@ -1,1 +1,40 @@
-<%= render partial: 'form' %>
+<div class="row">
+  <div class="col-lg-12">
+    <ul class="nav nav-tabs">
+      <% @events.each do |event| %>
+        <li role="presentation" class="<%= "active" if event.slug == params[:id] %>"><%= link_to event.title, edit_manage_event_path(event) %></li>
+      <% end %>
+    </ul>
+    <div class="form-wrapper">
+      <% if flash[:notice] %>
+        <div class="alert alert-success alert-dismissible" role="alert">
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <%= flash[:notice] %>
+        </div>
+      <% end %>
+      <%= simple_form_for [:manage, @event], html: {class: 'form-vertical' } do |f| %>
+        <%= f.input :title  %>
+        <%= f.input :category if @event.slug == 'school-fair-participants' %>
+
+        <div class="row sticky_elements">
+          <% if @related_items %>
+            <% @related_items.each do |key, value| %>
+              <div class="element col-lg-3 bg-success">
+                <%= link_to value["title"].truncate(30), value["url"] %>
+                <%= hidden_field_tag "event[related][]", key, class: "hidden_ids" %>
+                <button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              </div>
+            <% end %>
+          <% end %>
+        </div>
+        <div class="related_items_wrapper">
+          <div class='select_and_search form-group'>
+            <%= text_field_tag :search, '', placeholder: 'Поиск', class: "form-control"  %>
+          </div>
+          <div class='row posters'></div>
+        </div>
+        <%= f.submit 'Сохранить', :class => 'btn btn-default pull-right' %>
+      <% end %>
+    </div>
+  </div>
+</div>

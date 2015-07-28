@@ -1,7 +1,5 @@
 ru:
   simple_form:
-    "yes": 'Да'
-    "no": 'Нет'
     required:
       text: 'Обязательное поле'
       mark: '*'
@@ -10,7 +8,9 @@ ru:
       proposal:
         title: 'Название организации'
         category: 'Сфера деятельности'
-        contact: 'Контактное лицо'
-        phone: 'Телефон'
-        participant_type: 'Как хотите участвовать?'
-        space: 'Желаемая площадь, м2'
+        phone: 'Контактный телефон'
+        participant_type: 'Формат участия'
+        space: 'Желаемая площадь'
+      event:
+        title: "Название события"
+        category: "Категория"

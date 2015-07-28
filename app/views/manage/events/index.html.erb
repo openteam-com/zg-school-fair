@@ -1,8 +1,0 @@
-<div class="events_wrapper">
-  <% @events.each do |event| %>
-    <p>
-      <%= link_to event.title, manage_event_path(event) %>
-      <%= link_to "Редакитировать", edit_manage_event_path(event) %>
-    </p>
-  <% end %>
-</div>

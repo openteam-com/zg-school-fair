@@ -9,6 +9,11 @@ class Event < ActiveRecord::Base
 
   extend FriendlyId
   friendly_id :title, use: :slugged
+  def should_generate_new_friendly_id?
+    return true if !self.slug?
+
+    false
+  end
 
   extend Enumerize
   enumerize :category, in: [:vokal, :choreography, :poem, :minute_of_fame, :art]

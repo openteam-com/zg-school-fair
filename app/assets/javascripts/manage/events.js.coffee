@@ -16,10 +16,10 @@ $ ->
     $(this).prop('disabled', true)
     url = $(this).closest('.details').find('a')
 
-    $('.sticky_elements').append('<div class="element">
-      <a href="' + url.attr('href') + '">' + url.text() + '</a>
-      <span class="del_icon"><a href="#">x</a></span>
+    $('.sticky_elements').append('<div class="element col-lg-3 bg-success">
+      <a href="' + url.attr('href') + '">' + url.text().substring(0,30) + '</a>
       <input name="event[related][]" type="hidden" value="' + $(this).attr('id') + '" class="hidden_ids">
+      <button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
       </div>')
 
   $('#type_select').change ->
@@ -47,16 +47,17 @@ perform_ajax = ->
     success: (response) ->
       $.each response, (k, v) ->
         if $.inArray(k,get_related_ids()) isnt -1
-          button = "<div><button class='js-add-relation' type='button' remote='true' id='#{v.prefix}_#{k}' disabled>Добавлено</button></div>"
+          button = "<div><button class='js-add-relation btn btn-info' type='button' remote='true' id='#{v.prefix}_#{k}' disabled>Добавлено</button></div>"
         else
-          button = "<div><button class='js-add-relation' type='button' remote='true' id='#{v.prefix}_#{k}'>Добавить</button></div>"
+          button = "<div><button class='js-add-relation btn btn-default' type='button' remote='true' id='#{v.prefix}_#{k}'>Добавить</button></div>"
 
         $('.posters').append("
-        <li class='poster'>
-          <div class='image'><a href='#{v.url}'><img src='#{v.image}'/></a></div>
-          <div class='details'>
-            <a href='#{v.url}'>#{v.title}</a>
-            #{button}
+        <div class='col-lg-2'>
+          <div class='poster'>
+            <div class='image'><a href='#{v.url}'><img src='#{v.image}' class='center-block'/></a></div>
+            <div class='details'>
+              <a href='#{v.url}'>#{v.title.substring(0,40)}</a>
+              #{button}
+            </div>
           </div>
-        </li>
-        ")
+        </div> ")
