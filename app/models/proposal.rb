@@ -9,7 +9,7 @@ class Proposal < ActiveRecord::Base
 
   private
   def send_email
-    ProposalMailer.delay.send_anketa(self)
+    ProposalMailer.delay(retry: false).send_anketa(self)
     #ProposalMailer.send_anketa(self).deliver!
   end
 end
