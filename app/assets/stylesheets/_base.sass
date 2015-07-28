@@ -3,6 +3,18 @@ body
 
 .main-wrapper
 
+  .header
+    color: #00916d
+
+  .green-span
+    background-color: #009170
+    color: #ffffff
+    padding: 10px
+
+  .new-proposal-button
+    margin-top: 15px
+    padding: 10px 20px
+
   .header-wrapper
 
     .navigation-wrapper
@@ -39,32 +51,56 @@ body
       margin-top: 15px
 
   .content-wrapper
+    background-color: #ffffff
 
-    .content, .sponsors-wrapper
-      background-color: #ffffff
+    .requirements-wrapper
 
-    .content
+      div
+        padding: 15px 10px
 
-      .reviews-wrapper
-        .poster-wrapper
-          padding: 20px
+        p
+          padding-left: 60px
+          width: 275px
 
-          .poster
-            padding: 15px 15px
-            border: 1px solid #a7a7a7
-            border-radius: 5px
+        &.stationery
+          background: transparent image-url('stationery.jpg') no-repeat 15px center
 
-            .title
-              text-align: center
+        &.books
+          background: transparent image-url('books.jpg') no-repeat 15px center
 
-              a
-                color: #0067d0
-                font-size: 16px
+        &.tailoring
+          background: transparent image-url('tailoring.jpg') no-repeat 15px center
 
-            .image
+        &.computer
+          background: transparent image-url('computer.jpg') no-repeat 15px center
 
-              img
-                margin: 0 auto
+        &.sport
+          background: transparent image-url('sport.jpg') no-repeat 15px center
+
+        &.work-place
+          background: transparent image-url('work-place.jpg') no-repeat 15px center
+
+    .reviews-wrapper
+
+      .poster-wrapper
+        padding: 20px
+
+        .poster
+          padding: 15px 15px
+          border: 1px solid #a7a7a7
+          border-radius: 5px
+
+          .title
+            text-align: center
+
+            a
+              color: #0067d0
+              font-size: 16px
+
+          .image
+
+            img
+              margin: 0 auto
 
       .proposals_form_wrapper
         .proposal_space
@@ -79,10 +115,9 @@ body
             outline: none
 
     .sponsors-wrapper
-      border-top: 1px solid #a7a7a7
 
-      h3
-        color: #00916d
+      .sponsors
+        border-top: 1px solid #a7a7a7
 
 .footer-wrapper
   background-color: #f2f2f2
