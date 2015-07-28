@@ -10,6 +10,7 @@ end
 #
 #  id         :integer          not null, primary key
 #  item_type  :string(255)
+#  category   :string(255)
 #  item_id    :integer
 #  event_id   :integer
 #  created_at :datetime

@@ -17,6 +17,6 @@ class ProposalsController < ApplicationController
   private
 
   def proposal_params
-    params.require(:proposal).permit(:title, :category, :phone, :participant_type, :space)
+    params.require(:proposal).permit(:title, :category, :phone, :participant_type, :space, :contact)
   end
 end

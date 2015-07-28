@@ -1,9 +1,12 @@
 $ ->
-  $('#proposal_participant_type').change ->
-    if $(this).val() == 'full_time'
-      $('.proposal_space').slideDown()
-    else
-      $('.proposal_space').slideUp()
+  $('#proposal_participant_type_absentia').change ->
+    $('.proposal_space').slideUp()
 
     true
+
+  $('#proposal_participant_type_full_time').change ->
+    $('.proposal_space').slideDown()
+
+    true
+
   true

@@ -4,7 +4,7 @@ class Proposal < ActiveRecord::Base
 
   #after_validation :check_terms_accepted
 
-  validates_presence_of :title, :phone, :participant_type, :category
+  validates_presence_of :title, :phone, :participant_type, :category, :contact
 
   enumerize :participant_type, in: [:full_time, :absentia]
 
@@ -19,16 +19,12 @@ end
 # Table name: proposals
 #
 #  id               :integer          not null, primary key
-#  performer        :string(255)
-#  nomination       :text
-#  auditory         :text
-#  age              :integer
-#  address          :string(255)
+#  title            :string(255)
+#  category         :string(255)
 #  phone            :string(255)
-#  email            :string(255)
-#  performance_name :string(255)
-#  music            :integer
-#  accept_terms     :boolean
+#  participant_type :string(255)
+#  space            :integer
 #  created_at       :datetime
 #  updated_at       :datetime
+#  contact          :string(255)
 #

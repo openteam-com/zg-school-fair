@@ -32,7 +32,8 @@ end
 #
 #  id         :integer          not null, primary key
 #  title      :string(255)
-#  when       :date
+#  slug       :string(255)
+#  category   :string(255)
 #  created_at :datetime
 #  updated_at :datetime
 #
