@@ -1,6 +1,4 @@
 class ProposalsController < ApplicationController
-  include SimpleCaptcha::ControllerHelpers
-
   def new
     @proposal = Proposal.new
   end
@@ -10,7 +8,7 @@ class ProposalsController < ApplicationController
 
     if @proposal.save
       flash[:notice] = "Ваша заявка принята"
-      redirect_to about_path
+      redirect_to root_path
     else
       render :new
     end

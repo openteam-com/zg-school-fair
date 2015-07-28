@@ -4,7 +4,7 @@ class Proposal < ActiveRecord::Base
 
   #after_validation :check_terms_accepted
 
-  validates_presence_of :title, :phone, :participant_type, :category, :accept_terms
+  validates_presence_of :title, :phone, :participant_type, :category
 
   enumerize :participant_type, in: [:full_time, :absentia]
 
