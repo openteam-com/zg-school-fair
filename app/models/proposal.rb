@@ -1,16 +1,16 @@
 class Proposal < ActiveRecord::Base
-  extend Enumerize
-  attr_accessor :accept_terms
-
-  #after_validation :check_terms_accepted
 
   validates_presence_of :title, :phone, :participant_type, :category, :contact
 
+  after_save :send_email
+
+  extend Enumerize
   enumerize :participant_type, in: [:full_time, :absentia]
 
-  def check_terms_accepted
-    errors[:accept_terms] << 'Необходимо принять пользовательское соглашение' unless accept_terms == '1'
-    true
+  private
+  def send_email
+    ProposalMailer.delay.send_anketa(self)
+    #ProposalMailer.send_anketa(self).deliver!
   end
 end
 

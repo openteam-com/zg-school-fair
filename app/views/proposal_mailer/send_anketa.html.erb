@@ -1,0 +1,10 @@
+<% content_for :content do %>
+  <ul>
+    <li><strong>Название организации:</strong> <%= @proposal.title %></li>
+    <li><strong>Сфера деятельности:</strong> <%= @proposal.category %></li>
+    <li><strong>Контактное лицо:</strong> <%= @proposal.contact %></li>
+    <li><strong>Телефон:</strong> <%= @proposal.phone %></li>
+    <li><strong>Тип участия:</strong> <%= @proposal.participant_type.text %></li>
+    <li><%= "<strong>Желаемая площадь:</strong> #{@proposal.space}м2".html_safe if @proposal.space %></li>
+  </ul>
+<% end %>
