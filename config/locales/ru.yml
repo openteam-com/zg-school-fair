@@ -1,8 +1,1 @@
 ru:
-  simple_captcha:
-    placeholder: Введите код с картинки
-    label: Введите код с картинки
-    refresh_button_text: Обновить картинку
-    message:
-      default: Не верный код
-      user: Не верный код
