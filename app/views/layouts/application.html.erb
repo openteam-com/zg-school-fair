@@ -100,7 +100,7 @@
             <p><%= mail_to "elena@znaigorod.ru"%></p>
           </div>
         </div>
-        <%= render :partial => 'commons/metrika' %>
+        <%= render :partial => 'commons/metrika' if Rails.env.production? %>
         <!-- /FOOTER -->
       </div>
     </div>
