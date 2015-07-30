@@ -71,9 +71,14 @@
             <%= yield %>
           </div>
           <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 sponsors-wrapper">
-            <div class="sponsors">
+            <div class="sponsors row">
               <h3 class="header">Партнеры проекта</h3>
-              <%= link_to (image_tag 'alliance.png', alt: 'Продюссерский центр ARS-Альянс', title: 'Продюссерский центр ARS-Альянс', class: 'img-responsive'), 'http://www.ars-alliance.ru', target: :_blank %>
+              <div class="col-xs-6 col-sm-3 col-md-2 col-lg-2">
+                <%= link_to (image_tag 'alliance.png', alt: 'Продюссерский центр ARS-Альянс', title: 'Продюссерский центр ARS-Альянс', class: 'img-responsive'), 'http://www.ars-alliance.ru', target: :_blank %>
+              </div>
+              <div class="col-xs-6 col-sm-5 col-md-3 col-lg-3">
+                <%= link_to (image_tag 'ohota.jpg', alt: 'Охота на свадьбу', title: 'Охота на свадьбу', class: 'img-responsive'), 'http://xn--80aaaedn3dga7ahup1i.xn--p1ai/', target: :_blank %>
+              </div>
             </div>
           </div>
         </div>
