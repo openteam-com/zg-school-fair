@@ -19,8 +19,8 @@ class Event < ActiveRecord::Base
   enumerize :category, in: [:vokal, :choreography, :poem, :minute_of_fame, :art]
 
   def set_related_items
-    return unless related
     related_items.destroy_all
+    return unless related
 
     related.each do |item|
       prefix, id = item.split('_')
